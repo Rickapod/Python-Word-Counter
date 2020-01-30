@@ -5,6 +5,9 @@
 </head>
 <body>
   <h1>This is a Word Counter</h1>
+  <p> If you want to know more about this website see the <a href="{% url 'about' %}">About Page</a></p>
+
+  <h2>Enter your text below</h2>
   <form action="{% url 'count' %}">
     <textarea cols='40' rows='5' name='fulltext'></textarea>
     <br/>
