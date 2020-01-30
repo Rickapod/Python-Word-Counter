@@ -2,6 +2,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 import operator
+import re
 
 def homepage(request):
   return render(request, 'home.html')
@@ -11,8 +12,7 @@ def about(request):
 
 def count(request):
   fulltext = request.GET['fulltext']
-  
-  wordcount = fulltext.split()
+  wordcount = re.sub(r'\W+', ' ', fulltext).lower().split()
 
   words = {}
 
